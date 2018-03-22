@@ -9,14 +9,14 @@
 	<ui:define name="corpo">
 		<h:form>
 			<h:panelGrid columns="2">
-				<h:outputLabel>Usuário:</h:outputLabel>
+				<h:outputLabel>Login:</h:outputLabel>
 				<h:inputText value="#{usuario.login}" required="true" />
 
 				<h:outputLabel>Senha:</h:outputLabel>
 				<h:inputSecret value="#{usuario.senha}" required="true" />
 
 				<h:outputLabel>&nbsp;</h:outputLabel>
-				<h:commandButton value="Entrar" action="#{usuario.autenticar}" />
+				<h:commandButton value="Entrar" action="#{usuario.autenticar}" styleClass="btn btn-primary"/>
 			</h:panelGrid>
 			<h:outputLabel>#{usuario.mensagem}</h:outputLabel>
 		</h:form>

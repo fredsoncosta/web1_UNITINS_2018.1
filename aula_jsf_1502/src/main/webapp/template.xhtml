@@ -1,26 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-		xmlns:h="http://xmlns.jcp.org/jsf/html"
-		xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>
-	<ui:insert name='titulo'>Título Genérico</ui:insert>
-</title>
-</head>
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name='titulo'>Título Genérico</ui:insert></title>
+	<h:outputStylesheet library="webjars"
+		name="bootstrap/4.0.0-2/css/bootstrap.min-jsf.css" />
+	<h:outputStylesheet library="webjars"
+		name="bootstrap/4.0.0-2/css/bootstrap-theme.min-jsf.css" />
+	<h:outputStylesheet library="webjars"
+		name="font-awesome/5.0.6/css/font-awesome.min-jsf.css" />
+	<h:outputStylesheet name="css/style.css" />
+</h:head>
 <body>
-	<h1>Aula de JSF - UNITINS</h1>
-	<ui:insert name="menu">
+	<div class='container'>
+		<h1>Aula de JSF - UNITINS</h1>
+		<ui:insert name="menu">
 		Seja bem vindo #{usuario.login}
 		<h:form>
-			<h:commandLink value='Cadastrar Livro' action='#{usuario.cadlivro}' />
-			&nbsp;&nbsp;&nbsp;
-			<h:commandLink value='Sair' action='#{usuario.logout}' />
-		</h:form>
-		<br />
-	</ui:insert>
-	<ui:insert name='corpo'></ui:insert>
-	<h1>Rodapé</h1>
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<h:commandLink value='Cadastrar Livro' action='#{usuario.cadlivro}'
+						styleClass="btn btn-primary" />
+					<h:commandLink value='Sair' action='#{usuario.logout}'
+						styleClass="btn btn-danger" />
+				</div>
+			</h:form>
+
+			<br />
+		</ui:insert>
+
+		<ui:insert name='corpo'></ui:insert>
+
+		<h1>Rodapé</h1>
+	</div>
+	<h:outputScript library="webjars" name="jquery/3.3.1-1/jquery.min.js" />
+	<h:outputScript library="webjars"
+		name="bootstrap/4.0.0-2/js/bootstrap.min.js" />
 </body>
 </html>

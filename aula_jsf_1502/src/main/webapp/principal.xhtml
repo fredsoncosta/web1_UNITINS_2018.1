@@ -30,8 +30,10 @@
 			
 			<h:column>
 				<h:form>
-					<h:commandButton value='Editar'/>
-					<h:commandButton value='Excluir'/>
+				<div class="btn-group" role="group" aria-label="Basic example">
+					<h:commandButton value='Editar' action="#{livrobd.editar(livro)}" styleClass="btn btn-primary"/>
+					<h:commandButton value='Excluir' action="#{livrobd.excluir(livro)}" styleClass="btn btn-danger"/>
+					</div>
 				</h:form>
 			</h:column>
 		</h:dataTable>

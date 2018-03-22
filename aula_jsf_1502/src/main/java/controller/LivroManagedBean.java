@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.SessionScoped;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 
 import beans.Livro;
@@ -12,6 +13,7 @@ import beans.Livro;
 public class LivroManagedBean {
 	private List<Livro> livros;
 	private Livro livro;
+	private int indiceEdicao;
 	
 	public LivroManagedBean() {
 		this.livros = new ArrayList<Livro>();
@@ -25,7 +27,28 @@ public class LivroManagedBean {
 	}
 
 	public String inserir() {
-		return (this.livros.add(this.livro)) ? "sucesso" : "falha";
+		if (this.livros.add(this.livro)) {
+			this.inicializar();
+			return("sucesso");
+		}
+		return ("falha");
+	}
+	
+	public String excluir(Livro livro) {
+		this.livros.remove(livro);
+		return("principal");
+	}
+	
+	public String editar(Livro livro) {
+		this.indiceEdicao = this.livros.indexOf(livro);
+		this.livro = livro;
+		return("editar");
+	}
+	
+	public String editar() {
+		this.livros.set(this.indiceEdicao, this.livro);
+		this.inicializar();
+		return("principal");
 	}
 	
 	public String principal() {
@@ -48,4 +71,6 @@ public class LivroManagedBean {
 	public void setLivro(Livro livro) {
 		this.livro = livro;
 	}
+
+	
 }

@@ -4,7 +4,7 @@
 		xmlns:h="http://java.sun.com/jsf/html"
 		xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <ui:composition template="/template.xhtml">
-<ui:define name="titulo">Cadastro de Livros</ui:define>
+<ui:define name="titulo">Edição de Livros</ui:define>
 <ui:define name="corpo">
 	<h:form>
 		<h:panelGrid columns="2">
@@ -17,8 +17,8 @@
 			<h:outputLabel>Edição</h:outputLabel>
 			<h:inputText value="#{livrobd.livro.edicao}" required="true"/>
 			
-			<h:commandButton value="Cancelar" action="#{livrobd.principal}"/>
-			<h:commandButton value="Cadastrar" action="#{livrobd.inserir}" class="btn btn-primary"/>
+			<h:commandButton value="Cancelar" action="#{livrobd.principal}" />
+			<h:commandButton value="Editar" action="#{livrobd.editar}" styleClass="btn btn-primary"/>
 		</h:panelGrid>
 	</h:form>
 </ui:define>
