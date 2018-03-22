@@ -1,0 +1,51 @@
+package controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.bean.SessionScoped;
+import javax.faces.bean.ManagedBean;
+
+import beans.Livro;
+@ManagedBean(name="livrobd")
+@SessionScoped
+public class LivroManagedBean {
+	private List<Livro> livros;
+	private Livro livro;
+	
+	public LivroManagedBean() {
+		this.livros = new ArrayList<Livro>();
+//		this.livros.add(new Livro("AAA", "BBB", 1));
+//		this.livros.add(new Livro("CCC", "DDD", 2));
+		this.inicializar();
+	}
+	
+	private void inicializar() {
+		this.livro = new Livro();
+	}
+
+	public String inserir() {
+		return (this.livros.add(this.livro)) ? "sucesso" : "falha";
+	}
+	
+	public String principal() {
+		this.inicializar();
+		return "principal";
+	}
+	
+	public List<Livro> getLivros(){
+		return(this.livros);
+	}
+	
+	public void setLivros(List<Livro> livros) {
+		this.livros = livros;
+	}
+	
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
+	}
+}
