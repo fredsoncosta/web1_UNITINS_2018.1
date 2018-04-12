@@ -17,8 +17,6 @@ public class LivroManagedBean {
 	
 	public LivroManagedBean() {
 		this.livros = new ArrayList<Livro>();
-//		this.livros.add(new Livro("AAA", "BBB", 1));
-//		this.livros.add(new Livro("CCC", "DDD", 2));
 		this.inicializar();
 	}
 	

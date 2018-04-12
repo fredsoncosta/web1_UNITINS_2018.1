@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15187034215315" configfile="/aula_jsf_1502/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="36" y="156" id="pf15192883275870" referenceLink="//@navigationRule.1/@navigationCase.1/@toViewId|" outlinks="pf15192883275882 pf15192883441314" inlinks="pf15192883275882 pf15204990771470" path="/index.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="principal.xhtml" x="264" y="156" id="pf15192883441315" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf15217067559171" inlinks="pf15192883441314 pf15205132902040 pf15205152514372" path="/principal.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="*" x="360" y="12" id="pf15204990771473" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15204990771470 pf15204990989254 pf15205152514372" path="*"/>
-  <nodes xsi:type="pageflow:PFPage" name="livro/cadastro.xhtml" x="540" y="75" id="pf15204990989255" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15205132902040 pf15205132902041" inlinks="pf15204990989254 pf15205132902041" path="/livro/cadastro.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="livro/edicao.xhtml" x="407" y="240" id="pf15217067559172" inlinks="pf15217067559171" path="/livro/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="36" y="156" id="pf15192883275870" referenceLink="//@navigationRule.1/@navigationCase.2/@toViewId|" outlinks="pf15192883275882 pf15192883441314" inlinks="pf15192883275882 pf15204990771470" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="principal.xhtml" x="264" y="156" id="pf15192883441315" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15217067559171" inlinks="pf15192883441314 pf15205132902040 pf15205152514372" path="/principal.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="*" x="360" y="12" id="pf15204990771473" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15204990771470 pf15204990989254 pf15205152514372 pf15235205804202" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="livro/cadastro.xhtml" x="456" y="156" id="pf15204990989255" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15205132902040 pf15205132902041" inlinks="pf15204990989254 pf15205132902041" path="/livro/cadastro.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="livro/edicao.xhtml" x="407" y="240" id="pf15217067559172" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" inlinks="pf15217067559171" path="/livro/edicao.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="converter_validator/index.xhtml" x="600" y="12" id="pf15235205804213" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf15235205992979" inlinks="pf15235205804202" path="/converter_validator/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="converter_validator/index2.xhtml" x="624" y="120" id="pf152352059929710" referenceLink="//@navigationRule.5/@navigationCase.0/@toViewId|" inlinks="pf15235205992979" path="/converter_validator/index2.xhtml"/>
   <links id="pf15192883275882" target="pf15192883275870" source="pf15192883275870" outcome="falha" redirect="true"/>
   <links id="pf15192883441314" target="pf15192883441315" source="pf15192883275870" outcome="sucesso" redirect="true">
     <bendPoints d1Width="-4" d1Height="-92" d2Width="-219" d2Height="-77"/>
@@ -20,4 +22,6 @@
   </links>
   <links id="pf15205152514372" target="pf15192883441315" source="pf15204990771473" outcome="principal" redirect="true"/>
   <links id="pf15217067559171" target="pf15217067559172" source="pf15192883441315" outcome="editar" redirect="true"/>
+  <links id="pf15235205804202" target="pf15235205804213" source="pf15204990771473" outcome="conv_val" redirect="true"/>
+  <links id="pf15235205992979" target="pf152352059929710" source="pf15235205804213" outcome="salvar" redirect="true"/>
 </pageflow:Pageflow>

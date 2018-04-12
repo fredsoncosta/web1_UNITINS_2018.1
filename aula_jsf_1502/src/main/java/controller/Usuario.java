@@ -53,6 +53,10 @@ public class Usuario {
 	public String cadlivro() {
 		return("cadlivro");
 	}
+	
+	public String conv_val() {
+		return("conv_val");
+	}
 
 	/**
 	 * @return the login

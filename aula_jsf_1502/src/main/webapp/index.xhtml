@@ -16,7 +16,8 @@
 				<h:inputSecret value="#{usuario.senha}" required="true" />
 
 				<h:outputLabel>&nbsp;</h:outputLabel>
-				<h:commandButton value="Entrar" action="#{usuario.autenticar}" styleClass="btn btn-primary"/>
+				<h:commandButton value="Entrar" action="#{usuario.autenticar}"
+					styleClass="btn btn-primary" />
 			</h:panelGrid>
 			<h:outputLabel>#{usuario.mensagem}</h:outputLabel>
 		</h:form>
