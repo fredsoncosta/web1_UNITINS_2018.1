@@ -10,22 +10,24 @@
 		<h:form>
 			<h:panelGrid columns="2">
 				<h:outputLabel>Estado:</h:outputLabel>
-				<h:selectOneMenu value="#{estadomb.estado}"
-					converter="estadoConverter">
+				<h:selectOneMenu value="#{estadomb.estado}" converter="estadoConverter">
 					<f:selectItems value="#{estadomb.estados}" />
 				</h:selectOneMenu>
+				
+				
 				<h:outputLabel>CPF:</h:outputLabel>
 				<h:inputText value="#{estadomb.cpf}" 
 					required="true" 
 					requiredMessage="Campo CPF Obrigatório">
 					<!--        <f:validateLength minimum="11" maximum="11"/>-->
 					<f:validator validatorId="cpfValidator" />
+					<f:ajax event="keyup" render='mensagens'></f:ajax>
 				</h:inputText>
 				<h:outputLabel></h:outputLabel>
 				<h:commandButton type="submit" value="O que eu quiser!"
 					action="salvar" />
 					<h:outputLabel></h:outputLabel>
-					<h:messages></h:messages>
+					<h:messages id='mensagens'></h:messages>
 			</h:panelGrid>
 		</h:form>
 	</ui:define>

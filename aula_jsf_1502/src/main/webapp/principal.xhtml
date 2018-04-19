@@ -8,7 +8,7 @@
 	<ui:define name="titulo">Página Principal</ui:define>
 	<ui:define name="corpo">
 		<!-- <h:graphicImage library="img" name='IMG_0435.jpg' style="width:500px;" /> -->
-		<h:dataTable value="#{livrobd.livros}" var='livro' border="1">
+		<h:dataTable id='tabela' value="#{livrobd.livros}" var='livro' border="1">
 			<h:column>
 				<f:facet name='header'>
 					Título
@@ -32,11 +32,14 @@
 				<h:form>
 				<div class="btn-group" role="group" aria-label="Basic example">
 					<h:commandButton value='Editar' action="#{livrobd.editar(livro)}" styleClass="btn btn-primary"/>
-					<h:commandButton value='Excluir' action="#{livrobd.excluir(livro)}" styleClass="btn btn-danger"/>
-					</div>
+					<h:commandButton value='Excluir' action="#{livrobd.excluir(livro)}" styleClass="btn btn-danger">
+						<f:ajax event='action' render='tabela textoajax'></f:ajax>
+					</h:commandButton>
+				</div>
 				</h:form>
 			</h:column>
 		</h:dataTable>
+		<h:outputLabel id='textoajax' value='#{livrobd.mensagem}'></h:outputLabel>
 	</ui:define>
 
 </ui:composition>

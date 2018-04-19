@@ -14,6 +14,7 @@ public class LivroManagedBean {
 	private List<Livro> livros;
 	private Livro livro;
 	private int indiceEdicao;
+	private String mensagem;
 	
 	public LivroManagedBean() {
 		this.livros = new ArrayList<Livro>();
@@ -22,6 +23,7 @@ public class LivroManagedBean {
 	
 	private void inicializar() {
 		this.livro = new Livro();
+		this.mensagem = "";
 	}
 
 	public String inserir() {
@@ -34,6 +36,7 @@ public class LivroManagedBean {
 	
 	public String excluir(Livro livro) {
 		this.livros.remove(livro);
+		this.mensagem = "Excluído";
 		return("principal");
 	}
 	
@@ -68,6 +71,14 @@ public class LivroManagedBean {
 
 	public void setLivro(Livro livro) {
 		this.livro = livro;
+	}
+
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
 
 	

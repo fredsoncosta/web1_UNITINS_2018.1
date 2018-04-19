@@ -5,11 +5,9 @@
  */
 package controller;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 
 import beans.Estado;
@@ -54,8 +52,8 @@ public class EstadoMB {
   
   public String salvar()
   {
-    EstadoBD estado = new EstadoBD();
-    this.estado.setNome(estado.buscaNome(this.estado.getSigla()));
+//    EstadoBD estado = new EstadoBD();
+//    this.estado.setNome(estado.buscaNome(this.estado.getSigla()));
     return("salvar");
   }
 
