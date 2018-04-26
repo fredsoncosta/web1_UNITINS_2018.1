@@ -10,6 +10,15 @@
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
+	<filter>
+        <description>Filtro de Validação de Seção</description>
+        <filter-name>SessionValidatorFilter</filter-name>
+        <filter-class>security.FiltroValidacaoSessao</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SessionValidatorFilter</filter-name>
+        <url-pattern>/faces/system/*</url-pattern>
+    </filter-mapping>
 	<servlet-mapping>
 		<servlet-name>Faces Servlet</servlet-name>
 		<url-pattern>/faces/*</url-pattern>

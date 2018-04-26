@@ -7,6 +7,8 @@ package controller;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,6 +41,8 @@ public class Usuario {
 
 	public String autenticar() {
 		if (this.login.equals("fredson") && this.senha.equals("123")) {
+			FacesContext.getCurrentInstance().getExternalContext().
+            	getSessionMap().put("Usuario", this);
 			return ("sucesso");
 		}
 		this.mensagem = "Login e/ou senha inválidos!";
@@ -46,6 +50,10 @@ public class Usuario {
 	}
 
 	public String logout() {
+		FacesContext fc = FacesContext.getCurrentInstance();
+        HttpSession sessao = (HttpSession)fc.getExternalContext().
+                getSession(false);
+        sessao.invalidate();
 		this.inicializar();
 		return("logout");
 	}
